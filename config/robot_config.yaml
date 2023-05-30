@@ -1,0 +1,4 @@
+# 硬件设备-底盘
+chassis:
+  chassis_code: HJX233160101  #HJX：前缀  23316年月日 01版本 01号
+  map_yaml_path: "/home/hjx/ROS/map/map.yaml"

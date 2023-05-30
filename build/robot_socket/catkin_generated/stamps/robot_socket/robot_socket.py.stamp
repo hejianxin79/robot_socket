@@ -136,7 +136,6 @@ class RobotSocket(socketserver.BaseRequestHandler):
             conn.send(res.encode())
         # 地图格式转换
         if data["method"] == "pgmToJpg":
-            dic = {}
             self.batch_image("/home/hjx/ROS/map","/home/hjx/ROS/map")
             dic["status"] = 0
             dic["msg"] = "success"
@@ -158,15 +157,14 @@ class RobotSocket(socketserver.BaseRequestHandler):
         count = 0
         for files in glob.glob(in_dir+'/*'):
             filepath, filename = os.path.split(files)
-            if ".pgm" in filename:
-                out_file = os.path.splitext(filename)[0] + ".jpg"
-                # out_file = filename[0:9] + '.jpg'
-                # print(filepath,',',filename, ',', out_file)
-                im = Image.open(files)
-                new_path = os.path.join(out_dir, out_file)
-                print(count, ',', new_path)
-                count = count + 1
-                im.save(os.path.join(out_dir, out_file))
+            
+            out_file = filename[0:9] + '.jpg'
+            # print(filepath,',',filename, ',', out_file)
+            im = Image.open(files)
+            new_path = os.path.join(out_dir, out_file)
+            print(count, ',', new_path)
+            count = count + 1
+            im.save(os.path.join(out_dir, out_file))
 
 
 def handle(a, b):

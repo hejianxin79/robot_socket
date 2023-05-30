@@ -1,0 +1,2 @@
+robot_socket
+-DCATKIN_DEVEL_PREFIX=/home/hjx/ROS/robot_socket/devel -DCMAKE_INSTALL_PREFIX=/home/hjx/ROS/robot_socket/install -G Unix Makefiles

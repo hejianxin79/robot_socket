@@ -1,0 +1,8 @@
+prefix=/home/hjx/ROS/robot_socket/install
+
+Name: robot_socket
+Description: Description of robot_socket
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
